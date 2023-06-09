@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [selectedImage, setSelectedImage] = React.useState(null);
+  const [result, setResult] = React.useState(null);
+
+  const do_CV = () => {
+    if (selectedImage) {
+      console.log(selectedImage);
+      setResult("result");
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Photo-box">
+        <h1>Select an image to make a classification</h1>
+        <img alt="not found" width={"250px"} src={selectedImage} />
+      </div>
+      <div>
+        <input
+          type="file"
+          name="myImage"
+          onChange={(event) => {
+            console.log(event.target.files[0]);
+            setSelectedImage(URL.createObjectURL(event.target.files[0]));
+          }}
+        />
+        <button className="Button" onClick={(e) => do_CV()}>
+          Classification GO!
+        </button>
+      </div>
+      <div className="Result-box">{result}</div>
     </div>
   );
-}
+};
 
 export default App;
