@@ -1,0 +1,46 @@
+.UploadFile {
+  text-align: center;
+  align-items: center;
+  font-family: "Lucida Console";
+  padding: 20px;
+}
+
+.Photo-box {
+  height: 300px;
+  align-items: center;
+  padding: 30px;
+  background-color: lightblue;
+}
+
+.Photo-box img {
+  width: auto;
+  height: 300px; 
+}
+
+.Input {
+}
+
+.Classify {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.Button {
+  font-family: "Lucida Console";
+  border: transparent;
+  text-align: center;
+  background-color: lightblue;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-color: cornflowerblue;
+}
+
+.Result {
+  padding: 20px;
+  height: auto;
+  background-color: cornflowerblue;
+}
+
